@@ -1742,7 +1742,7 @@ RepetitionType Position::isDraw(const int checkMaxPly) const {
     const int e = std::min(st_->pliesFromNull, checkMaxPly);
 
 	std::stringstream ss;
-	ss << "i:" << i << ",e:" << e << "checkMaxPly:" << checkMaxPly;
+	ss << "i:" << i << ",e:" << e << ",st_->pliesFromNull:" << st_->pliesFromNull << ",checkMaxPly:" << checkMaxPly;
 	throw std::domain_error(ss.str());
 
     // 4手掛けないと千日手には絶対にならない。
