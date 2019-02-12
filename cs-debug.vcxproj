@@ -155,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="cshogi.pyx" />
+    <None Include="setup.py" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bitboard.hpp" />

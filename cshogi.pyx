@@ -129,7 +129,7 @@ cdef extern from "cshogi.h":
 		void push(const int move)
 		void pop(const int move)
 		bool is_game_over() const
-		int isDraw() const except +
+		int isDraw() except +
 		int move(const int from_square, const int to_square, const bool promotion) const
 		int drop_move(const int to_square, const int drop_piece_type) const
 		int move_from_usi(const string& usi) const
