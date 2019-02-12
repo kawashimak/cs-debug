@@ -121,7 +121,6 @@ def to_csa(int move):
 cdef extern from "cshogi.h":
 	cdef cppclass __Board:
 		__Board() except +
-		__Board(const string& sfen) except +
 		bool set_hcp(const char* hcp)
 		bool set_psfen(const char* psfen)
 		void reset()
@@ -148,10 +147,11 @@ cdef class Board:
 	cdef __Board __board
 
 	def __cinit__(self, sfen=None):
+		self.__board = __Board()
 		if sfen is None:
-			self.__board = __Board()
+			self.__board.reset()
 		else:
-			self.__board = __Board(sfen)
+			self.__board.set(sfen)
 
 	def set_hcp(self, hcp):
 		cdef char[::1] data = hcp

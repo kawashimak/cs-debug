@@ -2274,16 +2274,7 @@ Piece Position::movedPiece(const Move m) const {
 }
 
 void Position::clear() {
-	memset(byTypeBB_, 0, sizeof(byTypeBB_));
-	memset(byColorBB_, 0, sizeof(byColorBB_));
-	memset(&goldsBB_, 0, sizeof(goldsBB_));
-	memset(piece_, 0, sizeof(piece_));
-	memset(kingSquare_, 0, sizeof(kingSquare_));
-	memset(hand_, 0, sizeof(hand_));
-	memset(&turn_, 0, sizeof(turn_));
-	memset(&startState_, 0, sizeof(startState_));
-	memset(&gamePly_, 0, sizeof(gamePly_));
-	memset(&nodes_, 0, sizeof(nodes_));
+    memset(this, 0, sizeof(Position));
     st_ = &startState_;
 }
 

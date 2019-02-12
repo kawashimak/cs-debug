@@ -21,10 +21,6 @@ std::string __to_csa(const int move) {
 class __Board
 {
 public:
-	__Board() : pos(DefaultStartPositionSFEN) {}
-	__Board(const std::string& sfen) : pos(sfen) {}
-	~__Board() {}
-
 	void set(const std::string& sfen) { pos.set(sfen); }
 	bool set_hcp(const char* hcp) { return pos.set_hcp(hcp); }
 	bool set_psfen(const char* psfen) { return pos.set_psfen(psfen); }
