@@ -1741,6 +1741,10 @@ RepetitionType Position::isDraw(const int checkMaxPly) const {
     int i = Start;
     const int e = std::min(st_->pliesFromNull, checkMaxPly);
 
+	std::stringstream ss;
+	ss << "i:" << i << ",e:" << e << "checkMaxPly:" << checkMaxPly;
+	throw std::domain_error(ss.str());
+
     // 4手掛けないと千日手には絶対にならない。
     if (i <= e) {
         // 現在の局面と、少なくとも 4 手戻らないと同じ局面にならない。
