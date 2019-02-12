@@ -250,6 +250,9 @@ class Position {
 public:
     Position() {}
     Position(const Position& pos) { *this = pos; }
+    Position(const std::string& sfen) {
+        set(sfen);
+    }
 
     Position& operator = (const Position& pos);
     void set(const std::string& sfen);
